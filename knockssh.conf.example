@@ -1,0 +1,16 @@
+# This is the main configuration file for knockssh.
+# It contains various profiles with settings for host, ssh port, user, and the ports to knock for opening/closing.
+# By default, this configuration file is located in ~/.knockssh.conf.
+
+[default]  # The default profile, used when no profile is specified in the command.
+host = example.com  # The target host to connect to (e.g., domain or IP address).
+ssh_port = 2222  # The SSH port for the default profile (default is usually 22).
+user = fred  # The user to log in as via SSH.
+open_ports = 7000,8000  # Comma-separated list of ports to knock to open for SSH access.
+close_ports = 8000,7000  # Comma-separated list of ports to knock to close the connection.
+
+[foo]  # A second profile named 'foo' which can be called via knockssh -p foo
+host = 192.0.2.1  # Example host in the 192.0.2.0/24 range (reserved for documentation).
+user = waldo  # A different user for this profile.
+open_ports = 7000,8000,9000  # Additional ports to knock for opening on this host.
+close_ports = 1934,2948,2932  # Different ports to knock for closing on this host.
